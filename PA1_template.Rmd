@@ -90,12 +90,13 @@ The mean is `r stepmean` and the median is `r stepmedian`.
                       lwd = 2 )
 
 ### Find the interval with maximum mean
-    max_interval <- intervaldata[max(intervaldata$mean_steps),]
-
+    
+    max_interval <- intervaldata[which.max(intervaldata$mean_steps),1]
+    
 ```
 
 
-The interval with maximum mean steps is `r max_interval$interval`
+The interval with maximum mean steps is `r max_interval`
 
 
 #### Step 4 - Imputing missing values 

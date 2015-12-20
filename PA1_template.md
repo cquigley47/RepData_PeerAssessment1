@@ -104,11 +104,12 @@ The mean is 10766 and the median is 10765.
 
 ```r
 ### Find the interval with maximum mean
-    max_interval <- intervaldata[max(intervaldata$mean_steps),]
+    
+    max_interval <- intervaldata[which.max(intervaldata$mean_steps),1]
 ```
 
 
-The interval with maximum mean steps is 1705
+The interval with maximum mean steps is 835
 
 
 #### Step 4 - Imputing missing values 
