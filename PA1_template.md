@@ -1,5 +1,7 @@
 # Reproducible Research: Peer Assessment # 1
 
+Chuck Quigley 1/7/2016
+
 This analysis uses data from a personal activity monitoring device. This device collects data at 5 minute intervals through out the day. The data consists of two months of data from an anonymous individual collected during the months of October and November, 2012 and include the number of steps taken in 5 minute intervals each day.
 
 The **datafile** consists of 3 variables.
@@ -59,7 +61,7 @@ options(scipen = 1, digits = 0)
 ```r
 ### Plot histogram - breaks = 10 gives finer plot
     hist(stepdata$total_steps,
-            main = "Total Number of Steps Per Day - Histogram",
+            main = "Total Number of Steps Per Day",
             xlab = "Steps",
             col="green",
             breaks=10)
@@ -93,8 +95,8 @@ The mean is 10766 and the median is 10765.
 
 ```r
 ### Create Line plot
-    plot(intervaldata, type = 'l', main="Mean of 5 Minute Intervals", 
-                      xlab = "5 Minute Intervals",
+    plot(intervaldata, type = 'l', main="Mean of Five Minute Intervals", 
+                      xlab = "Five Minute Intervals",
                       ylab = "Mean",
                       col = "blue",
                       lwd = 2 )
@@ -154,7 +156,7 @@ There are 2304 missing values in the dataset.
 
 ### Without missing data - Use ylim to get same scale for both plots
     hist(stepdata$total_steps,
-            main = "Without Missing (NA) Data",
+            main = "Without Missing Data",
             xlab = "Steps",
             ylim = c(0,25),
             col="green",
@@ -162,7 +164,7 @@ There are 2304 missing values in the dataset.
 
 ### Histogram with Imputed Values
     hist(stepdata_imputed$total_steps,
-            main = "Missing Data replaced by Mean",
+            main = "Missing Data Replaced by Mean",
             xlab = "Steps",
             ylim = c(0,25),
             col="green",
@@ -204,7 +206,7 @@ The median without Imputed data is 10765
 ### Create 2 plots with factor function of xyplot
     xyplot(mean_steps ~ interval | factor(weekend), data=wdata, 
             pch=19,
-            main="Comparison of Weekend Data and Weekdays Data", 
+            main="Comparison of Weekend and Weekdays Data", 
             xlab="Interval",
             ylab="Mean Number of Steps",
             layout=c(1,2),type="l")
